@@ -102,7 +102,7 @@ const ContactUs01 = () => {
                 </div>
                 <p className="text-lg leading-relaxed font-medium">
                   E-48, Sector-03, Gautambuddha Nagar, <br />
-                  Noida, Uttarpradesh, 201301
+                  Noida, Uttar Pradesh, 201301
                 </p>
               </div>
             </div>

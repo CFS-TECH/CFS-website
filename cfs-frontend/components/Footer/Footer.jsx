@@ -53,7 +53,7 @@ const Footer = () => {
                       <MdLocationPin className="w-5 h-5 text-orange-500 group-hover:text-white" />
                     </div>
                     <span className="text-xs sm:text-sm font-semibold leading-relaxed pt-1">
-                      E-48, Sector-03, Gautambuddha Nagar, <br className="hidden md:block"/> Noida, Uttarpradesh, 201301
+                      E-48, Sector-03, Gautambuddha Nagar, <br className="hidden md:block"/> Noida, Uttar Pradesh, 201301
                     </span>
                   </div>
                 </div>

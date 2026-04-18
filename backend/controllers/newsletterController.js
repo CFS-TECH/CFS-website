@@ -1,4 +1,5 @@
 const Newsletter = require('../models/Newsletter');
+const sendEmail = require('../utils/sendEmail');
 
 // @desc    Subscribe to newsletter
 // @route   POST /api/newsletter
@@ -13,6 +14,33 @@ const subscribe = async (req, res) => {
     }
 
     subscriber = await Newsletter.create({ email });
+
+    // Send welcome email to subscriber
+    try {
+      await sendEmail({
+        email: email,
+        subject: 'Welcome to Crossover Fintech Support Newsletter!',
+        html: `
+          <h1>Welcome to CFS!</h1>
+          <p>Thank you for subscribing to our newsletter.</p>
+          <p>You will now receive weekly updates on fintech and digital growth.</p>
+          <br/>
+          <p>Best Regards,</p>
+          <p><b>CFS Team</b></p>
+        `
+      });
+
+      // Notify admin about new subscriber
+      await sendEmail({
+        email: process.env.EMAIL_USER,
+        subject: 'New Newsletter Subscriber',
+        html: `<h3>New subscriber alert!</h3><p>Email: ${email}</p>`
+      });
+    } catch (emailError) {
+      console.error('Email could not be sent', emailError);
+      // We still return success since the subscriber was created in the DB
+    }
+
     res.status(201).json({ success: true, data: subscriber });
   } catch (error) {
     res.status(400).json({ success: false, message: error.message });
