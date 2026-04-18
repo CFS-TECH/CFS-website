@@ -1,10 +1,10 @@
 "use client"
 import Link from "next/link";
 import { useRouter } from "next/navigation";
-import { Lock, Mail, ArrowRight, AlertTriangle, ShieldCheck } from "lucide-react";
+import { Lock, Mail, ArrowRight, AlertTriangle } from "lucide-react";
 import Image from "next/image";
 import { motion, AnimatePresence } from "framer-motion";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import api from "@/utils/api";
 import HydrationGuard from "@/components/Common/HydrationGuard";
 
@@ -46,110 +46,102 @@ export default function AdminLogin() {
 
   return (
     <HydrationGuard>
-      <div className="min-h-screen bg-[#080F1A] flex items-center justify-center p-4 relative overflow-hidden text-gray-200 font-sans" suppressHydrationWarning={true}>
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-orange-50/40 flex items-center justify-center p-4 relative overflow-hidden text-slate-800 font-sans" suppressHydrationWarning={true}>
         
-        {/* Dynamic Background Glows */}
+        {/* Abstract Background Elements */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none" suppressHydrationWarning={true}>
-          <div className="absolute -top-[10%] -right-[10%] w-[60%] h-[60%] rounded-full bg-[#FD741E]/10 blur-[120px] animate-pulse" suppressHydrationWarning={true}></div>
-          <div className="absolute bottom-[0%] -left-[10%] w-[50%] h-[50%] rounded-full bg-[#102A43]/30 blur-[120px]" suppressHydrationWarning={true}></div>
+          <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-orange-100/50 blur-[100px]" suppressHydrationWarning={true}></div>
+          <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-slate-100/50 blur-[100px]" suppressHydrationWarning={true}></div>
         </div>
 
         <motion.div 
-          initial={{ opacity: 0, scale: 0.95, y: 20 }}
+          initial={{ opacity: 0, scale: 0.98, y: 10 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-          className="w-full max-w-[460px] relative z-10"
+          transition={{ duration: 0.6 }}
+          className="w-full max-w-[440px] relative z-10"
           suppressHydrationWarning={true}
         >
-          <div className="bg-[#0B1221]/40 backdrop-blur-3xl rounded-[3rem] p-10 md:p-14 shadow-[0_25px_60px_-15px_rgba(0,0,0,0.7)] border border-white/5 relative overflow-hidden" suppressHydrationWarning={true}>
+          <div className="bg-white rounded-[2.5rem] p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-slate-100 relative" suppressHydrationWarning={true}>
             
-            {/* Animated Top Border Accent */}
-            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-[#FD741E] to-transparent" suppressHydrationWarning={true}></div>
-
-            <div className="mb-12 text-center flex flex-col items-center" suppressHydrationWarning={true}>
+            <div className="mb-10 text-center flex flex-col items-center" suppressHydrationWarning={true}>
               <motion.div 
-                initial={{ y: -20, opacity: 0 }}
+                initial={{ y: -10, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
-                transition={{ delay: 0.2, duration: 0.8 }}
-                className="bg-white p-7 rounded-[2.5rem] shadow-[0_20px_50px_rgba(253,116,30,0.15)] mb-10 relative group"
+                transition={{ delay: 0.2, duration: 0.5 }}
+                className="mb-8"
                 suppressHydrationWarning={true}
               >
-                {/* Ambient Glow */}
-                <div className="absolute -inset-1 bg-gradient-to-r from-[#FD741E] to-[#ffa569] rounded-[2.6rem] blur opacity-20 group-hover:opacity-40 transition duration-1000 group-hover:duration-200"></div>
-                
-                <div className="relative bg-white rounded-[2rem] p-2" suppressHydrationWarning={true}>
-                  <Image
-                    src="https://res.cloudinary.com/dcgxjwv68/image/upload/v1775496900/cfs_assets/logo.png"
-                    alt="Crossover Fintech Logo"
-                    width={220}
-                    height={80}
-                    className="w-44 h-auto object-contain brightness-105"
-                    unoptimized={true}
-                  />
-                </div>
+                <Image
+                  src="https://res.cloudinary.com/dcgxjwv68/image/upload/v1775496900/cfs_assets/logo.png"
+                  alt="Crossover Fintech Logo"
+                  width={200}
+                  height={70}
+                  className="w-40 h-auto object-contain mix-blend-multiply"
+                  unoptimized={true}
+                />
               </motion.div>
               
-              <h1 className="text-4xl font-black text-white tracking-tight mb-3" suppressHydrationWarning={true}>
+              <h1 className="text-3xl font-bold text-slate-900 tracking-tight mb-2" suppressHydrationWarning={true}>
                 Admin <span className="text-[#FD741E]">Portal</span>
               </h1>
-              <p className="text-gray-500 text-[12px] font-bold uppercase tracking-[0.3em]" suppressHydrationWarning={true}>Identity Verification Required</p>
+              <p className="text-slate-400 text-[11px] font-bold uppercase tracking-[0.2em]" suppressHydrationWarning={true}>Security Authentication Required</p>
             </div>
 
             <AnimatePresence mode="wait">
               {error && (
                 <motion.div 
-                  initial={{ opacity: 0, height: 0 }}
-                  animate={{ opacity: 1, height: 'auto' }}
-                  exit={{ opacity: 0, height: 0 }}
-                  className="mb-8 bg-red-500/10 border border-red-500/20 rounded-2xl p-4 flex items-center gap-4 overflow-hidden"
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  exit={{ opacity: 0, y: -10 }}
+                  className="mb-6 bg-red-50 border border-red-100 rounded-2xl p-4 flex items-center gap-3"
                   suppressHydrationWarning={true}
                 >
-                   <AlertTriangle className="text-red-500 flex-shrink-0" size={20} />
-                   <p className="text-xs font-bold text-red-500">{error}</p>
+                   <AlertTriangle className="text-red-500 flex-shrink-0" size={18} />
+                   <p className="text-xs font-semibold text-red-600">{error}</p>
                 </motion.div>
               )}
             </AnimatePresence>
 
-            <form className="space-y-7" onSubmit={handleLogin} suppressHydrationWarning={true}>
+            <form className="space-y-6" onSubmit={handleLogin} suppressHydrationWarning={true}>
               
-              <div className="space-y-3" suppressHydrationWarning={true}>
-                <label className="text-[11px] font-black text-gray-500 uppercase tracking-widest ml-1">Work Email Address</label>
+              <div className="space-y-2" suppressHydrationWarning={true}>
+                <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider ml-1">Work Email</label>
                 <div className="relative group" suppressHydrationWarning={true}>
-                  <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none" suppressHydrationWarning={true}>
-                    <Mail size={18} className="text-gray-600 group-focus-within:text-[#FD741E] transition-colors" />
+                  <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none" suppressHydrationWarning={true}>
+                    <Mail size={16} className="text-slate-400 group-focus-within:text-[#FD741E] transition-colors" />
                   </div>
                   <input 
                     type="email" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    placeholder="admin.access@cfs.com" 
-                    className="w-full pl-14 pr-7 py-5 bg-white/[0.03] border border-white/5 rounded-2xl text-[14px] focus:bg-white/[0.07] focus:outline-none focus:ring-4 focus:ring-[#FD741E]/10 focus:border-[#FD741E]/40 transition-all font-semibold text-white placeholder:text-gray-700 shadow-inner"
+                    placeholder="admin@crossover.com" 
+                    className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-[14px] focus:bg-white focus:outline-none focus:ring-4 focus:ring-orange-500/5 focus:border-[#FD741E]/40 transition-all font-medium text-slate-900 placeholder:text-slate-300"
                     required
                   />
                 </div>
               </div>
 
-              <div className="space-y-3" suppressHydrationWarning={true}>
+              <div className="space-y-2" suppressHydrationWarning={true}>
                 <div className="flex justify-between items-center ml-1" suppressHydrationWarning={true}>
-                  <label className="text-[11px] font-black text-gray-500 uppercase tracking-widest">Master Password</label>
+                  <label className="text-[10px] font-bold text-slate-500 uppercase tracking-wider">Password</label>
                   <button 
                     type="button"
                     onClick={() => router.push('/admin/forgot-password')} 
-                    className="text-[10px] font-black text-[#FD741E]/70 hover:text-[#FD741E] transition-all uppercase tracking-[0.1em] cursor-pointer hover:underline underline-offset-4 decoration-[#FD741E]/30"
+                    className="text-[10px] font-bold text-orange-600 hover:text-orange-700 transition-colors uppercase tracking-wider"
                   >
                     Forgot?
                   </button>
                 </div>
                 <div className="relative group" suppressHydrationWarning={true}>
-                  <div className="absolute inset-y-0 left-0 pl-6 flex items-center pointer-events-none" suppressHydrationWarning={true}>
-                    <Lock size={18} className="text-gray-600 group-focus-within:text-[#FD741E] transition-colors" />
+                  <div className="absolute inset-y-0 left-0 pl-5 flex items-center pointer-events-none" suppressHydrationWarning={true}>
+                    <Lock size={16} className="text-slate-400 group-focus-within:text-[#FD741E] transition-colors" />
                   </div>
                   <input 
                     type="password" 
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••••••" 
-                    className="w-full pl-14 pr-7 py-5 bg-white/[0.03] border border-white/5 rounded-2xl text-[14px] focus:bg-white/[0.07] focus:outline-none focus:ring-4 focus:ring-[#FD741E]/10 focus:border-[#FD741E]/40 transition-all font-semibold text-white placeholder:text-gray-700 shadow-inner"
+                    className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-[14px] focus:bg-white focus:outline-none focus:ring-4 focus:ring-orange-500/5 focus:border-[#FD741E]/40 transition-all font-medium text-slate-900 placeholder:text-slate-300"
                     required
                   />
                 </div>
@@ -158,29 +150,23 @@ export default function AdminLogin() {
               <button 
                  type="submit"
                  disabled={loading}
-                 className="w-full mt-10 bg-gradient-to-r from-[#FD741E] to-[#ff8c3a] hover:shadow-[0_0_30px_rgba(253,116,30,0.3)] text-white font-black py-5 px-8 rounded-2xl flex items-center justify-center gap-3 transition-all transform hover:-translate-y-1 active:translate-y-0 active:scale-[0.98] border border-white/10 disabled:opacity-50 disabled:cursor-not-allowed group"
+                 className="w-full mt-8 bg-[#FD741E] hover:bg-[#e66316] text-white font-bold py-4 px-8 rounded-2xl flex items-center justify-center gap-2 transition-all shadow-[0_10px_20px_rgba(253,116,30,0.2)] hover:shadow-[0_15px_25px_rgba(253,116,30,0.3)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed group"
                  suppressHydrationWarning={true}
               >
-                <span className="tracking-[0.2em] uppercase text-sm">{loading ? "Authenticating..." : "Establish Connection"}</span>
-                {!loading && <ArrowRight size={20} className="group-hover:translate-x-1 transition-transform" />}
+                <span className="text-sm tracking-wide">{loading ? "Verifying..." : "Continue to Dashboard"}</span>
+                {!loading && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
               </button>
               
             </form>
 
-          </div>
-          
-          <div className="mt-12 flex flex-col items-center gap-3" suppressHydrationWarning={true}>
-             <div className="flex items-center gap-2 opacity-40" suppressHydrationWarning={true}>
-                <div className="h-[1px] w-8 bg-white/20" suppressHydrationWarning={true}></div>
-                <p className="text-[10px] text-gray-400 font-bold uppercase tracking-[0.4em]">Secure Node</p>
-                <div className="h-[1px] w-8 bg-white/20" suppressHydrationWarning={true}></div>
-             </div>
-             
-             <p className="text-center text-[10px] text-gray-700 font-bold uppercase tracking-widest" suppressHydrationWarning={true}>
-               &copy; {new Date().getFullYear()} Crossover Fintech Support
-             </p>
-          </div>
+            <div className="mt-10 pt-8 border-t border-slate-50 flex flex-col items-center gap-2" suppressHydrationWarning={true}>
+               <p className="text-[10px] text-slate-400 font-medium uppercase tracking-[0.2em]">Protected by End-to-End Encryption</p>
+               <p className="text-[10px] text-slate-300 font-bold uppercase tracking-widest">
+                 &copy; {new Date().getFullYear()} Crossover Fintech Support
+               </p>
+            </div>
 
+          </div>
         </motion.div>
       </div>
     </HydrationGuard>
