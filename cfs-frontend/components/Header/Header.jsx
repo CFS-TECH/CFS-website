@@ -42,13 +42,7 @@ const Header = () => {
             <MdEmail className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-500" />
             <span>crossoverfintechsupport@gmail.com</span>
           </a>
-          <a
-            href="tel:+919990782525"
-            className="flex items-center gap-2 hover:text-orange-400 transition-all text-[11px] sm:text-xs md:text-sm font-medium"
-          >
-            <MdPhone className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-orange-500" />
-            <span>+91 99907 82525</span>
-          </a>
+
         </section>
 
         <section className="hidden md:flex items-center gap-5">
