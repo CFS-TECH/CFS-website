@@ -46,12 +46,13 @@ export default function AdminLogin() {
 
   return (
     <HydrationGuard>
-      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-orange-50/40 flex items-center justify-center p-4 relative overflow-hidden text-slate-800 font-sans" suppressHydrationWarning={true}>
+      <div className="min-h-screen bg-[#fcfdff] flex items-center justify-center p-4 relative overflow-hidden text-slate-800 font-sans" suppressHydrationWarning={true}>
         
-        {/* Abstract Background Elements */}
+        {/* Animated Background Gradients - Adding more color depth */}
         <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none" suppressHydrationWarning={true}>
-          <div className="absolute top-[-10%] right-[-10%] w-[40%] h-[40%] rounded-full bg-orange-100/50 blur-[100px]" suppressHydrationWarning={true}></div>
-          <div className="absolute bottom-[-10%] left-[-10%] w-[40%] h-[40%] rounded-full bg-slate-100/50 blur-[100px]" suppressHydrationWarning={true}></div>
+          <div className="absolute top-[-20%] right-[-10%] w-[60%] h-[60%] rounded-full bg-orange-100/40 blur-[120px] animate-pulse" suppressHydrationWarning={true}></div>
+          <div className="absolute bottom-[-20%] left-[-10%] w-[60%] h-[60%] rounded-full bg-blue-100/40 blur-[120px]" suppressHydrationWarning={true}></div>
+          <div className="absolute top-[20%] left-[20%] w-[30%] h-[30%] rounded-full bg-purple-50/50 blur-[100px]" suppressHydrationWarning={true}></div>
         </div>
 
         <motion.div 
@@ -61,8 +62,14 @@ export default function AdminLogin() {
           className="w-full max-w-[440px] relative z-10"
           suppressHydrationWarning={true}
         >
-          <div className="bg-white rounded-[2.5rem] p-10 md:p-12 shadow-[0_20px_50px_rgba(0,0,0,0.06)] border border-slate-100 relative" suppressHydrationWarning={true}>
+          {/* Decorative Outer Ring */}
+          <div className="absolute -inset-0.5 bg-gradient-to-tr from-orange-400/20 to-blue-400/20 rounded-[2.6rem] blur-sm" suppressHydrationWarning={true}></div>
+          
+          <div className="bg-white/95 backdrop-blur-sm rounded-[2.5rem] p-10 md:p-12 shadow-[0_30px_60px_rgba(0,0,0,0.08)] border border-slate-100 relative" suppressHydrationWarning={true}>
             
+            {/* Top Accent Line */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-1.5 bg-orange-500 rounded-b-full"></div>
+
             <div className="mb-10 text-center flex flex-col items-center" suppressHydrationWarning={true}>
               <motion.div 
                 initial={{ y: -10, opacity: 0 }}
@@ -115,7 +122,7 @@ export default function AdminLogin() {
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="admin@crossover.com" 
-                    className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-[14px] focus:bg-white focus:outline-none focus:ring-4 focus:ring-orange-500/5 focus:border-[#FD741E]/40 transition-all font-medium text-slate-900 placeholder:text-slate-300"
+                    className="w-full pl-12 pr-6 py-4 bg-slate-50/50 border border-slate-100 rounded-2xl text-[14px] focus:bg-white focus:outline-none focus:ring-4 focus:ring-orange-500/5 focus:border-orange-200 transition-all font-medium text-slate-900 placeholder:text-slate-300"
                     required
                   />
                 </div>
@@ -141,7 +148,7 @@ export default function AdminLogin() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     placeholder="••••••••••••" 
-                    className="w-full pl-12 pr-6 py-4 bg-slate-50 border border-slate-100 rounded-2xl text-[14px] focus:bg-white focus:outline-none focus:ring-4 focus:ring-orange-500/5 focus:border-[#FD741E]/40 transition-all font-medium text-slate-900 placeholder:text-slate-300"
+                    className="w-full pl-12 pr-6 py-4 bg-slate-50/50 border border-slate-100 rounded-2xl text-[14px] focus:bg-white focus:outline-none focus:ring-4 focus:ring-orange-500/5 focus:border-orange-200 transition-all font-medium text-slate-900 placeholder:text-slate-300"
                     required
                   />
                 </div>
@@ -150,10 +157,10 @@ export default function AdminLogin() {
               <button 
                  type="submit"
                  disabled={loading}
-                 className="w-full mt-8 bg-[#FD741E] hover:bg-[#e66316] text-white font-bold py-4 px-8 rounded-2xl flex items-center justify-center gap-2 transition-all shadow-[0_10px_20px_rgba(253,116,30,0.2)] hover:shadow-[0_15px_25px_rgba(253,116,30,0.3)] active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed group"
+                 className="w-full mt-8 bg-gradient-to-r from-orange-500 to-[#F46400] hover:shadow-[0_15px_30px_rgba(244,100,0,0.3)] text-white font-bold py-4.5 rounded-2xl flex items-center justify-center gap-2 transition-all active:scale-[0.98] disabled:opacity-50 disabled:cursor-not-allowed group h-[60px]"
                  suppressHydrationWarning={true}
               >
-                <span className="text-sm tracking-wide">{loading ? "Verifying..." : "Continue to Dashboard"}</span>
+                <span className="text-[15px] tracking-wide">{loading ? "Verifying..." : "Access Dashboard"}</span>
                 {!loading && <ArrowRight size={18} className="group-hover:translate-x-1 transition-transform" />}
               </button>
               
