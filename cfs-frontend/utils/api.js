@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://cfs-backend-4a33.onrender.com/api',
+  baseURL: process.env.NEXT_PUBLIC_API_URL || 'https://api.crossoverfintech.com/api',
   headers: {
     'Content-Type': 'application/json',
   },
