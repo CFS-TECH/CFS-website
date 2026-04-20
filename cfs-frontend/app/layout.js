@@ -14,7 +14,7 @@ const poppins = Poppins({
 });
 
 export const metadata = {
-  metadataBase: new URL("https://crossoverfintechsupport.com"),
+  metadataBase: new URL("https://crossoverfintech.com"),
 
   title: {
     default: "Crossover Fintech Support | BPO, ITES & Digital Growth Services",
@@ -60,7 +60,7 @@ export const metadata = {
       "Crossover Fintech Support | Professional Business Support Solutions",
     description:
       "Expert BPO, Finance, ITES, Website Development & Digital Marketing services tailored for fintech, startups, and enterprises.",
-    url: "https://crossoverfintechsupport.com",
+    url: "https://crossoverfintech.com",
     siteName: "Crossover Fintech Support",
     locale: "en_US",
     type: "website",
@@ -89,7 +89,7 @@ export const metadata = {
   },
 
   alternates: {
-    canonical: "https://crossoverfintechsupport.com",
+    canonical: "https://crossoverfintech.com",
   },
 
   category: "Business Services",
@@ -100,8 +100,8 @@ export default function RootLayout({ children }) {
     "@context": "https://schema.org",
     "@type": "Organization",
     name: "Crossover Fintech Support",
-    url: "https://crossoverfintechsupport.com",
-    logo: "https://crossoverfintechsupport.com/og-image.jpg",
+    url: "https://crossoverfintech.com",
+    logo: "https://crossoverfintech.com/og-image.jpg",
     contactPoint: {
       "@type": "ContactPoint",
       telephone: "+91-99907-82525",
