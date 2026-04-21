@@ -7,6 +7,6 @@ export default function robots() {
         disallow: ["/admin/", "/login/"],
       },
     ],
-    sitemap: "https://crossoverfintechsupport.com/sitemap.xml",
+    sitemap: "https://crossoverfintech.com/sitemap.xml",
   };
 }
