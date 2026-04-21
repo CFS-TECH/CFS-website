@@ -1,7 +1,7 @@
 import api from "@/utils/api";
 
 export default async function sitemap() {
-  const baseUrl = "https://crossoverfintechsupport.com";
+  const baseUrl = "https://crossoverfintech.com";
 
   // Static routes
   const staticRoutes = [
