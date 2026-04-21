@@ -18,8 +18,8 @@ export const metadata = {
   metadataBase: new URL("https://crossoverfintech.com"),
 
   title: {
-    default: "Top Tech Company in Noida | Crossover Fintech Support",
-    template: "%s | Top Tech Company in Noida",
+    default: "Crossover Fintech Support | Professional Business Support",
+    template: "%s | Crossover Fintech Support",
   },
 
   description:
