@@ -36,9 +36,9 @@ const WhyChooseUs = () => {
             </h1>
 
             <p className="text-gray-600 text-lg md:text-xl leading-relaxed max-w-lg">
-              We empower businesses with enterprise-grade software engineering, 
-              next-gen digital transformation, and scalable technology solutions 
-              designed to fuel high-performance growth.
+              As a top tech company in Noida, we empower businesses with enterprise-grade 
+              software engineering, next-gen digital transformation, and scalable 
+              technology solutions designed to fuel high-performance growth.
             </p>
           </div>
 

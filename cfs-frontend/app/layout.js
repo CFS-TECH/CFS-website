@@ -18,14 +18,15 @@ export const metadata = {
   metadataBase: new URL("https://crossoverfintech.com"),
 
   title: {
-    default: "Crossover Fintech Support | BPO, ITES & Digital Growth Services",
-    template: "%s | Crossover Fintech Support",
+    default: "Top Tech Company in Noida | Crossover Fintech Support",
+    template: "%s | Top Tech Company in Noida",
   },
 
   description:
     "Crossover Fintech Support provides professional BPO, Finance & Accounting, IT-Enabled Services, Website Development, Digital Marketing, and Corporate Travel Support for growing businesses worldwide.",
 
   keywords: [
+    "Top tech company in Noida",
     "BPO services",
     "Fintech support",
     "Finance and accounting outsourcing",
