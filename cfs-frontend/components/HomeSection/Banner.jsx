@@ -94,7 +94,7 @@ export const BannerFinTech = () => {
                <div className="w-2 h-2 bg-orange-500 rounded-sm"></div>
             </div>
             <span className="text-xs md:text-sm font-black tracking-[0.1em] text-orange-400 uppercase pt-1 border-b-2 border-orange-500/30 pb-1">
-              Top Tech Company in Noida - Engineering Excellence
+              Software Engineering & Digital Transformation
             </span>
           </motion.div>
 
