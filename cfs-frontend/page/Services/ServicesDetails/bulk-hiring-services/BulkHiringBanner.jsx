@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   Users,
   ArrowRight,
@@ -101,12 +102,12 @@ const BulkHiringBanner = () => {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row w-full sm:w-auto gap-4 mb-10"
             >
-              <button className="flex items-center justify-center gap-2 px-8 py-4 bg-[#fd741e] text-white font-bold rounded-xl hover:bg-[#e06314] transition-all duration-300 shadow-[0_4px_14px_0_rgba(253,116,30,0.3)] hover:shadow-[0_6px_20px_rgba(253,116,30,0.2)] hover:-translate-y-1">
+              <Link href="/contact-us" className="flex items-center justify-center gap-2 px-8 py-4 bg-[#fd741e] text-white font-bold rounded-xl hover:bg-[#e06314] transition-all duration-300 shadow-[0_4px_14px_0_rgba(253,116,30,0.3)] hover:shadow-[0_6px_20px_rgba(253,116,30,0.2)] hover:-translate-y-1">
                 Hire Talent Now <ArrowRight size={18} />
-              </button>
-              <button className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#094a84] border border-gray-200 font-bold rounded-xl hover:border-[#094a84] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
+              </Link>
+              <Link href="/contact-us" className="flex items-center justify-center gap-2 px-8 py-4 bg-white text-[#094a84] border border-gray-200 font-bold rounded-xl hover:border-[#094a84] transition-all duration-300 shadow-sm hover:shadow-md hover:-translate-y-1">
                 <Building2 size={18} /> Partner With Us
-              </button>
+              </Link>
             </motion.div>
 
             {/* Trust Indicators */}

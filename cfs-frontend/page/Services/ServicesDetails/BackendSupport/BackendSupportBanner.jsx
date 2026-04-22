@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
+import Link from "next/link";
 import {
   Database,
   FileCheck2,
@@ -91,12 +92,12 @@ const BackendSupportBanner = () => {
               variants={fadeInUp}
               className="flex flex-col sm:flex-row w-full sm:w-auto gap-3 mb-8"
             >
-              <button className="flex items-center justify-center gap-2 px-6 py-3.5 bg-[#fd741e] text-white font-bold rounded-xl hover:bg-[#e06314] transition-all duration-300 shadow-[0_4px_14px_0_rgba(253,116,30,0.3)] hover:-translate-y-1">
+              <Link href="/contact-us" className="flex items-center justify-center gap-2 px-6 py-3.5 bg-[#fd741e] text-white font-bold rounded-xl hover:bg-[#e06314] transition-all duration-300 shadow-[0_4px_14px_0_rgba(253,116,30,0.3)] hover:-translate-y-1">
                 <Database size={18} /> Outsource Processes
-              </button>
-              <button className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[#094a84] border border-gray-200 font-bold rounded-xl hover:border-[#094a84] transition-all duration-300 shadow-sm hover:-translate-y-1">
+              </Link>
+              <Link href="/services" className="flex items-center justify-center gap-2 px-6 py-3.5 bg-white text-[#094a84] border border-gray-200 font-bold rounded-xl hover:border-[#094a84] transition-all duration-300 shadow-sm hover:-translate-y-1">
                 <Keyboard size={18} /> View Capabilities
-              </button>
+              </Link>
             </motion.div>
 
             <motion.div
