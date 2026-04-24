@@ -17,7 +17,7 @@ import {
   Globe
 } from "lucide-react";
 import { useState, useEffect } from "react";
-import axios from "axios";
+import api from "@/utils/api";
 
 export default function AdminDashboard() {
   const [stats, setStats] = useState(null);
@@ -28,8 +28,8 @@ export default function AdminDashboard() {
     const fetchData = async () => {
       try {
         const [statsRes, recentRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/dashboard/stats'),
-          axios.get('http://localhost:5000/api/dashboard/recent')
+          api.get('/dashboard/stats'),
+          api.get('/dashboard/recent')
         ]);
         setStats(statsRes.data.data);
         setRecentData(recentRes.data.data);

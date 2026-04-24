@@ -1,6 +1,6 @@
 "use client";
 import React, { useState } from "react";
-import axios from "axios";
+import api from "@/utils/api";
 import { IoLogoFacebook, IoLogoInstagram, IoLogoTwitter, IoLogoLinkedin } from "react-icons/io";
 import { MdWifiCalling, MdOutlineEmail, MdLocationOn } from "react-icons/md";
 import { SendHorizontal } from "lucide-react";
@@ -22,7 +22,7 @@ const ContactUs01 = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('http://localhost:5000/api/leads', {
+      const response = await api.post('/leads', {
         type: 'contact',
         ...formData
       });

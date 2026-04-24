@@ -2,7 +2,7 @@
 import { servicesData } from "@/utils/Utils";
 import { usePathname } from "next/navigation";
 import React, { useEffect, useState } from "react";
-import axios from "axios";
+import api from "@/utils/api";
 import { motion, AnimatePresence } from "framer-motion";
 import {
   IoMdArrowDropdown,
@@ -37,7 +37,7 @@ const ContactPopup = () => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      const response = await axios.post('http://localhost:5000/api/leads', {
+      const response = await api.post('/leads', {
         type: 'popup',
         companyName: name,
         email,
