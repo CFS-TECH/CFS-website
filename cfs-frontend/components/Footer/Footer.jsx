@@ -36,11 +36,11 @@ const Footer = () => {
               <section className="col-span-2 lg:col-span-3 flex flex-col items-start">
                 <h2 className="text-xl font-bold pb-3 border-b-2 border-orange-500 w-fit mb-6">Reach Us</h2>
                 <div className="flex flex-col gap-5">
-                  <a href="tel:+919990782525" className="flex gap-4 items-center hover:text-orange-400 transition-colors group">
+                  <a href="tel:+916398149627" className="flex gap-4 items-center hover:text-orange-400 transition-colors group">
                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-orange-500 transition-all">
                       <FaPhone className="w-4 h-4 text-orange-500 group-hover:text-white" />
                     </div>
-                    <p className="text-sm md:text-base font-semibold">+91 99907 82525</p>
+                    <p className="text-sm md:text-base font-semibold">+91 63981 49627</p>
                   </a>
                   <a href="mailto:crossoverfintechsupport@gmail.com" className="flex gap-4 items-center hover:text-orange-400 transition-colors group">
                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-orange-500 transition-all">
