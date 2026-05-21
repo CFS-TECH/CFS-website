@@ -173,12 +173,7 @@ const Header = () => {
           >
             Careers
           </Link>
-          <Link
-            href="/about-us"
-            className="font-semibold text-[#102a43] hover:text-[#fd741e]"
-          >
-            About Us
-          </Link>
+
           <Link
             href="/brochure"
             className="font-semibold text-[#102a43] hover:text-[#fd741e]"
@@ -318,13 +313,7 @@ const Header = () => {
             >
               Careers
             </Link>
-            <Link
-              href="/about-us"
-              onClick={closeMobileMenu}
-              className="font-bold text-[#102a43]"
-            >
-              About Us
-            </Link>
+
             <Link
               href="/brochure"
               onClick={closeMobileMenu}
