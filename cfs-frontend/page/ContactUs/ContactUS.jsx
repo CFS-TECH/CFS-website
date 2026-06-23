@@ -52,19 +52,19 @@ const ContactUs01 = () => {
       </div>
 
     
-      <div className="text-center mb-16 relative z-10">
-        <h1 className="text-4xl md:text-6xl font-black text-[#011C2B] mb-4 tracking-tight">
+      <div className="text-center mb-8 md:mb-16 relative z-10">
+        <h1 className="text-3xl md:text-6xl font-black text-[#011C2B] mb-3 tracking-tight">
           Connect with <span className="text-orange-500">Us</span>
         </h1>
-        <p className="text-slate-500 text-lg max-w-2xl mx-auto font-medium">
-        Got a question or just want to connect? We’d be happy to hear from you. Fill out the form and we’ll get back to you soon.
+        <p className="text-slate-500 text-sm md:text-lg max-w-2xl mx-auto font-medium px-2">
+          Got a question or just want to connect? We’d be happy to hear from you. Fill out the form and we’ll get back to you soon.
         </p>
       </div>
 
-      <div className="max-w-6xl w-full bg-white rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col md:flex-row relative z-10 border border-white">
+      <div className="max-w-6xl w-full bg-white rounded-3xl md:rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col md:flex-row relative z-10 border border-white">
          {/* --- LEFT SECTION */}
        
-        <div className="md:w-5/12 bg-[#102a43] p-10 md:p-14 text-white relative flex flex-col justify-between overflow-hidden">
+        <div className="md:w-5/12 bg-[#102a43] p-6 md:p-14 text-white relative flex flex-col justify-between overflow-hidden">
           
           {/* --- GRAPHIC ELEMENTS --- */}
           {/* Large Soft Orb */}
@@ -76,46 +76,46 @@ const ContactUs01 = () => {
                style={{ backgroundImage: `radial-gradient(circle at 2px 2px, rgba(255,255,255,0.1) 1px, transparent 0)`, backgroundSize: '24px 24px' }} />
 
           <div className="relative z-10">
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 tracking-tight">Contact Information</h2>
-            <p className="text-gray-300 mb-12 text-lg font-light leading-relaxed">
+            <h2 className="text-2xl md:text-4xl font-bold mb-3 md:mb-6 tracking-tight">Contact Information</h2>
+            <p className="text-gray-300 mb-6 md:mb-12 text-sm md:text-lg font-light leading-relaxed">
               Fill up the form and our team will get back to you within 24 hours.
             </p>
 
-            <div className="space-y-10">
-              <div className="flex items-center gap-6 group cursor-pointer">
-                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
-                  <MdWifiCalling className="text-2xl" />
+            <div className="space-y-5 md:space-y-10">
+              <div className="flex items-center gap-4 md:gap-6 group cursor-pointer">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl md:rounded-2xl shrink-0 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                  <MdWifiCalling className="text-xl md:text-2xl" />
                 </div>
-                <span className="text-lg font-medium">+91 99907 82525</span>
+                <span className="text-sm md:text-lg font-medium">+91 99907 82525</span>
               </div>
 
-              <div className="flex items-center gap-6 group cursor-pointer">
-                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
-                  <MdOutlineEmail className="text-2xl" />
+              <div className="flex items-center gap-4 md:gap-6 group cursor-pointer">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl md:rounded-2xl shrink-0 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                  <MdOutlineEmail className="text-xl md:text-2xl" />
                 </div>
-                <span className="text-lg font-medium">crossoverfintechsupport@gmail.com</span>
+                <span className="text-sm md:text-lg font-medium break-all">crossoverfintechsupport@gmail.com</span>
               </div>
 
-              <div className="flex items-start gap-6 group cursor-pointer">
-                <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
-                  <MdLocationOn className="text-2xl mt-1" />
+              <div className="flex items-start gap-4 md:gap-6 group cursor-pointer">
+                <div className="w-10 h-10 md:w-12 md:h-12 bg-white/10 rounded-xl md:rounded-2xl shrink-0 flex items-center justify-center text-orange-500 group-hover:bg-orange-500 group-hover:text-white transition-all duration-300">
+                  <MdLocationOn className="text-xl md:text-2xl mt-1" />
                 </div>
-                <p className="text-lg leading-relaxed font-medium">
-                  E-48, Sector-03, Gautambuddha Nagar, <br />
-                  Noida, Uttar Pradesh, 201301
+                <p className="text-sm md:text-lg leading-relaxed font-medium">
+                  E-48, Sector-03, Noida, <br />
+                  Uttar Pradesh, 201301
                 </p>
               </div>
             </div>
           </div>
 
-          <div className="flex gap-4 mt-16 relative z-10">
+          <div className="flex gap-4 mt-8 md:mt-16 relative z-10">
             {[
               { icon: <IoLogoFacebook />, href: "https://www.facebook.com/profile.php?id=61587398464233" },
               { icon: <IoLogoInstagram />, href: "https://www.instagram.com/crossoverfintech/" },
               { icon: <IoLogoTwitter />, href: "https://x.com/CFintech93318" },
               { icon: <IoLogoLinkedin />, href: "https://www.linkedin.com/in/crossover-fintech-9a15b73b6/" }
             ].map((social, i) => (
-              <a key={i} href={social.href} target="_blank" className="w-12 h-12 flex items-center justify-center rounded-2xl bg-white/10 text-xl hover:bg-orange-500 hover:-translate-y-2 transition-all duration-300">
+              <a key={i} href={social.href} target="_blank" className="w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-xl md:rounded-2xl bg-white/10 text-lg md:text-xl hover:bg-orange-500 hover:-translate-y-2 transition-all duration-300">
                 {social.icon}
               </a>
             ))}
@@ -123,8 +123,8 @@ const ContactUs01 = () => {
         </div>
 
         {/* --- RIGHT SECTION (White Form) --- */}
-        <div className="md:w-7/12 p-8 md:p-14 bg-white">
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-12">
+        <div className="md:w-7/12 p-6 md:p-14 bg-white">
+          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 md:gap-y-12">
             
             {/* Standard Inputs */}
             {[
