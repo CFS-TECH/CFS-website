@@ -124,77 +124,83 @@ const ContactUs01 = () => {
 
         {/* --- RIGHT SECTION (White Form) --- */}
         <div className="md:w-7/12 p-6 md:p-14 bg-white">
-          <form onSubmit={handleSubmit} className="grid grid-cols-1 md:grid-cols-2 gap-x-10 gap-y-6 md:gap-y-12">
+          <form onSubmit={handleSubmit} className="flex flex-col gap-6 md:gap-8">
             
-            {/* Standard Inputs */}
-            {[
-              { label: "First Name", name: "firstName", type: "text" },
-              { label: "Last Name", name: "lastName", type: "text" },
-              { label: "Email", name: "email", type: "email" },
-              { label: "Phone Number", name: "phone", type: "tel" },
-            ].map((field) => (
-              <div key={field.name} className="relative group">
-                <input
-                  required
-                  type={field.type}
-                  name={field.name}
-                  value={formData[field.name]}
-                  onChange={handleChange}
-                  className="peer w-full border-b-2 border-slate-200 py-2 focus:border-orange-500 focus:outline-none bg-transparent placeholder-transparent transition-all font-medium text-[#011C2B]"
-                  placeholder={field.label}
-                />
-                <label className="absolute left-0 -top-4 text-slate-400 text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-placeholder-shown:font-medium peer-placeholder-shown:normal-case peer-focus:-top-4 peer-focus:text-orange-500 peer-focus:text-xs peer-focus:font-bold peer-focus:uppercase transition-all">
-                  {field.label}
-                </label>
-              </div>
-            ))}
-
-            {/* Subject Selection */}
-            <div className="md:col-span-2 space-y-4 pt-2">
-              <p className="font-bold text-[#011C2B] uppercase text-xs tracking-widest">Select Subject?</p>
-              <div className="flex flex-wrap gap-6">
-                {["General Inquiry", "Support", "Feedback"].map((sub) => (
-                  <label key={sub} className="flex items-center gap-2 cursor-pointer group">
-                    <input
-                      type="radio"
-                      name="subject"
-                      value={sub}
-                      checked={formData.subject === sub}
-                      onChange={handleChange}
-                      className="w-5 h-5 accent-orange-500 cursor-pointer"
-                    />
-                    <span className={`text-sm font-semibold transition-colors ${formData.subject === sub ? 'text-orange-500' : 'text-slate-500 group-hover:text-slate-800'}`}>
-                      {sub}
-                    </span>
+            {/* 2x2 Grid for Fields on Desktop, Stacked on Mobile */}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 md:gap-6">
+              {[
+                { label: "First Name", name: "firstName", type: "text" },
+                { label: "Last Name", name: "lastName", type: "text" },
+                { label: "Email", name: "email", type: "email" },
+                { label: "Phone Number", name: "phone", type: "tel" },
+              ].map((field) => (
+                <div key={field.name} className="flex flex-col gap-2">
+                  <label className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">
+                    {field.label}
                   </label>
+                  <input
+                    required
+                    type={field.type}
+                    name={field.name}
+                    value={formData[field.name]}
+                    onChange={handleChange}
+                    className="w-full border border-slate-200 bg-slate-50/50 rounded-xl px-4 py-3 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10 focus:outline-none transition-all font-medium text-sm text-[#011C2B]"
+                    placeholder={`Enter your ${field.label.toLowerCase()}`}
+                  />
+                </div>
+              ))}
+            </div>
+
+            {/* Subject Selection (Styled as modern chips) */}
+            <div className="space-y-3 pt-1">
+              <p className="font-bold text-slate-400 uppercase text-[10px] md:text-xs tracking-widest">
+                Select Subject
+              </p>
+              <div className="flex flex-wrap gap-2.5">
+                {["General Inquiry", "Support", "Feedback"].map((sub) => (
+                  <button
+                    key={sub}
+                    type="button"
+                    onClick={() => setFormData({ ...formData, subject: sub })}
+                    className={`px-4 py-2 rounded-full text-xs font-bold transition-all border ${
+                      formData.subject === sub
+                        ? "bg-orange-500 text-white border-orange-500 shadow-sm shadow-orange-500/20"
+                        : "bg-slate-50 text-slate-600 border-slate-200 hover:bg-slate-100"
+                    }`}
+                  >
+                    {sub}
+                  </button>
                 ))}
               </div>
             </div>
 
             {/* Message Area */}
-            <div className="md:col-span-2 relative">
+            <div className="flex flex-col gap-2">
+              <label className="text-[10px] md:text-xs font-bold text-slate-400 uppercase tracking-widest">
+                Write your message
+              </label>
               <textarea
                 name="message"
                 value={formData.message}
                 onChange={handleChange}
-                className="peer w-full border-b-2 border-slate-200 py-2 focus:border-orange-500 focus:outline-none bg-transparent resize-none h-28 placeholder-transparent transition-all font-medium text-[#011C2B]"
-                placeholder="Write your message..."
+                className="w-full border border-slate-200 bg-slate-50/50 rounded-xl px-4 py-3 focus:border-orange-500 focus:bg-white focus:ring-4 focus:ring-orange-500/10 focus:outline-none transition-all font-medium text-sm text-[#011C2B] resize-none h-32"
+                placeholder="How can we help you?"
               />
-              <label className="absolute left-0 -top-4 text-slate-400 text-xs font-bold uppercase tracking-widest peer-placeholder-shown:text-base peer-placeholder-shown:top-2 peer-focus:-top-4 peer-focus:text-orange-500 peer-focus:text-xs transition-all">
-                Write your message...
-              </label>
             </div>
 
             {/* Submit Button */}
-            <div className="md:col-span-2 flex justify-end">
+            <div className="flex justify-end pt-2">
               <button
                 type="submit"
-                className="group bg-[#011C2B] text-white px-10 py-5 rounded-2xl font-bold text-lg flex items-center gap-3 hover:bg-orange-500 transition-all duration-300 shadow-xl shadow-blue-900/10 hover:shadow-orange-500/30"
+                className="group w-full sm:w-auto bg-[#011C2B] text-white px-8 py-4 rounded-xl font-bold text-base flex items-center justify-center gap-3 hover:bg-orange-500 transition-all duration-300 shadow-lg shadow-blue-950/10 hover:shadow-orange-500/20 active:scale-95"
               >
                 <span>Send Message</span>
-                <SendHorizontal size={20} className="group-hover:translate-x-1 transition-transform" />
+                <SendHorizontal size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
+
+          </form>
+        </div>
 
           </form>
         </div>
