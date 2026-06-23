@@ -119,7 +119,7 @@ export const ServicesBanner = () => {
       </section>
 
       {/* --- MOBILE HERO PANEL --- */}
-      <section className="block md:hidden w-full relative overflow-hidden font-sans bg-[#0d2238] py-16 px-6" suppressHydrationWarning={true}>
+      <section className="block md:hidden w-full relative overflow-hidden font-sans bg-[#0d2238] py-12 px-5" suppressHydrationWarning={true}>
         {/* Mobile Background Image with subtle scale */}
         <div className="absolute inset-0 w-full h-full z-0">
           <img
@@ -134,32 +134,32 @@ export const ServicesBanner = () => {
         </div>
 
         {/* Content Area */}
-        <div className="relative z-10 flex flex-col gap-6 text-white max-w-md mx-auto">
+        <div className="relative z-10 flex flex-col gap-5 text-white max-w-md mx-auto">
           {/* Tag Badges */}
-          <div className="flex flex-wrap gap-2">
+          <div className="flex flex-wrap gap-1.5">
             {serviceData.tags.map((tag, i) => (
-              <span key={i} className="text-[10px] font-bold tracking-widest bg-white/5 border border-white/10 text-orange-400 px-3 py-1.5 rounded-full uppercase backdrop-blur-md">
+              <span key={i} className="text-[9px] font-bold tracking-wider bg-white/5 border border-white/10 text-orange-400 px-2.5 py-1 rounded-full uppercase backdrop-blur-md">
                 {tag}
               </span>
             ))}
           </div>
 
           {/* Headline */}
-          <h1 className="text-[32px] font-black leading-[1.25] text-start tracking-tight">
+          <h1 className="text-3xl sm:text-4xl font-black leading-tight text-start tracking-tight">
             Empowering <br />
             <span className="text-orange-500 animate-pulse">Businesses</span> with <br />
             Smart <span className="text-orange-400">Infrastructure</span>
           </h1>
 
           {/* Paragraph */}
-          <p className="text-sm text-slate-300 font-light leading-relaxed text-start border-l-2 border-orange-500/50 pl-4">
+          <p className="text-sm text-slate-300 font-light leading-relaxed text-start border-l-2 border-orange-500/50 pl-3">
             {serviceData.description}
           </p>
 
           {/* CTA Button */}
-          <div className="flex pt-2">
-            <Link href={"/contact-us"} className="w-full flex items-center justify-center bg-orange-500 text-white font-bold py-4 px-8 rounded-xl shadow-lg shadow-orange-500/20 active:scale-95 transition-all text-sm tracking-widest uppercase">
-              Start Your Project <FaArrowRight className="ml-2 w-4 h-4" />
+          <div className="flex justify-start pt-1">
+            <Link href={"/contact-us"} className="inline-flex items-center justify-center bg-orange-500 text-white font-bold py-3.5 px-6 rounded-xl shadow-lg shadow-orange-500/20 active:scale-95 transition-all text-xs tracking-widest uppercase">
+              Start Your Project <FaArrowRight className="ml-2 w-3.5 h-3.5" />
             </Link>
           </div>
         </div>
