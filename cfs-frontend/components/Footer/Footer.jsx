@@ -91,6 +91,29 @@ const Footer = () => {
                 </div>
               </section>
 
+              {/* Follow Us - Half width on mobile/tablet, hidden on desktop */}
+              <section className="col-span-1 lg:hidden flex flex-col items-start mt-4">
+                <h2 className="text-xl font-bold pb-3 border-b-2 border-orange-500 w-fit mb-6">Follow Us</h2>
+                <div className="flex items-center gap-3 flex-wrap">
+                  {[
+                    { icon: <IoLogoFacebook />, href: "https://www.facebook.com/profile.php?id=61587398464233", label: "Facebook" },
+                    { icon: <IoLogoInstagram />, href: "https://www.instagram.com/crossoverfintech/", label: "Instagram" },
+                    { icon: <IoLogoTwitter />, href: "https://x.com/CFintech93318", label: "Twitter" },
+                    { icon: <IoLogoLinkedin />, href: "https://www.linkedin.com/in/crossover-fintech-9a15b73b6/", label: "LinkedIn" },
+                  ].map((social, index) => (
+                    <Link
+                      key={index}
+                      href={social.href}
+                      target="_blank"
+                      aria-label={`Follow on ${social.label}`}
+                      className="w-10 h-10 rounded-xl bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-orange-500 hover:border-orange-500 hover:scale-110 transition-all"
+                    >
+                      <span className="text-xl">{social.icon}</span>
+                    </Link>
+                  ))}
+                </div>
+              </section>
+
               {/* Newsletter & Socials - Full width on mobile/tablet */}
               <section className="col-span-2 sm:col-span-1 lg:col-span-3 mt-8 lg:mt-0">
                 <Newsletter />
@@ -171,7 +194,7 @@ export const Newsletter = () => {
         </p>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="hidden lg:flex items-center gap-4">
         {[
           { icon: <IoLogoFacebook />, href: "https://www.facebook.com/profile.php?id=61587398464233", label: "Facebook" },
           { icon: <IoLogoInstagram />, href: "https://www.instagram.com/crossoverfintech/", label: "Instagram" },

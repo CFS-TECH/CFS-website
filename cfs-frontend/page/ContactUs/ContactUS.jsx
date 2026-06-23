@@ -198,10 +198,6 @@ const ContactUs01 = () => {
                 <SendHorizontal size={18} className="group-hover:translate-x-1 transition-transform" />
               </button>
             </div>
-
-          </form>
-        </div>
-
           </form>
         </div>
       </div>
