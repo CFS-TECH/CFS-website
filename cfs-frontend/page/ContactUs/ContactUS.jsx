@@ -64,7 +64,7 @@ const ContactUs01 = () => {
       <div className="max-w-6xl w-full bg-white rounded-3xl md:rounded-[2.5rem] shadow-[0_50px_100px_-20px_rgba(0,0,0,0.15)] overflow-hidden flex flex-col md:flex-row relative z-10 border border-white">
          {/* --- LEFT SECTION */}
        
-        <div className="md:w-5/12 bg-[#102a43] p-6 md:p-14 text-white relative flex flex-col justify-between overflow-hidden">
+        <div className="hidden md:flex md:w-5/12 bg-[#102a43] md:p-14 text-white relative flex-col justify-between overflow-hidden">
           
           {/* --- GRAPHIC ELEMENTS --- */}
           {/* Large Soft Orb */}
