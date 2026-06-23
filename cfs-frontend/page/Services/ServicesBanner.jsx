@@ -151,6 +151,17 @@ export const ServicesBanner = () => {
             Smart <span className="text-orange-400">Infrastructure</span>
           </h1>
 
+          {/* Mobile Illustration Image */}
+          <div className="relative rounded-2xl overflow-hidden shadow-lg border border-white/10 aspect-video my-1">
+            <img
+              src="https://res.cloudinary.com/dcgxjwv68/image/upload/v1775497014/cfs_assets/tech.jpg"
+              alt="Crossover Tech Infrastructure"
+              className="w-full h-full object-cover"
+            />
+            {/* Subtle glow border */}
+            <div className="absolute inset-0 border border-white/20 rounded-2xl pointer-events-none"></div>
+          </div>
+
           {/* Paragraph */}
           <p className="text-sm text-slate-300 font-light leading-relaxed text-start border-l-2 border-orange-500/50 pl-3">
             {serviceData.description}
