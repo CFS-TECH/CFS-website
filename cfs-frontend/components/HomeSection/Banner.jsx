@@ -60,7 +60,7 @@ export const BannerFinTech = () => {
           initial={{ x: "-100%" }}
           animate={{ x: 0 }}
           transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }} 
-          className="absolute top-0 left-0 h-[120%] w-[120%] md:w-[70%] lg:w-[65%] bg-orange-500 z-10 origin-top-left"
+          className="absolute top-0 left-0 h-[120%] w-[120%] md:w-[70%] lg:w-[65%] bg-orange-500 z-10 origin-top-left hidden md:block"
           style={{ clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)" }}
         ></motion.div>
 
@@ -69,9 +69,12 @@ export const BannerFinTech = () => {
           initial={{ x: "-100%" }}
           animate={{ x: 0 }}
           transition={{ duration: 0.8, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
-          className="absolute top-0 left-0 h-[120%] w-[118%] md:w-[68%] lg:w-[62%] bg-[#102A43] z-20 origin-top-left shadow-[30px_0_50px_rgba(0,0,0,0.7)] border-r-4 border-white/5"
+          className="absolute top-0 left-0 h-[120%] w-[118%] md:w-[68%] lg:w-[62%] bg-[#102A43] z-20 origin-top-left shadow-[30px_0_50px_rgba(0,0,0,0.7)] border-r-4 border-white/5 hidden md:block"
           style={{ clipPath: "polygon(0 0, 100% 0, 85% 100%, 0% 100%)" }}
         ></motion.div>
+
+        {/* Mobile Overlay (Semi-transparent instead of solid black) */}
+        <div className="absolute inset-0 bg-[#102A43]/85 z-20 md:hidden" />
 
       </div>
 

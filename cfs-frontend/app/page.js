@@ -1,4 +1,4 @@
-import HomePage from "@/page/HomePage/HomePage";
+import Services from "@/page/Services/Services";
 
 export const metadata = {
   title: "Crossover Fintech Support",
@@ -8,8 +8,8 @@ export const metadata = {
 
 export default function Home() {
   return (
-   <main>
-   <HomePage/>
+   <main suppressHydrationWarning={true}>
+     <Services />
    </main>
   );
 }

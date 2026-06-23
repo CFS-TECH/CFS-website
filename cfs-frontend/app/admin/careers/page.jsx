@@ -50,7 +50,7 @@ export default function AdminCareers() {
     setError("");
     setSuccess("");
 
-    if (!formData.title || !formData.location || !formData.compensation || !formData.duration) {
+    if (!formData.title || !formData.location || !formData.compensation || (formData.type === 'internship' && !formData.duration)) {
        setError("Please fill all required fields.");
        setSubmitting(false);
        return;
@@ -272,16 +272,18 @@ export default function AdminCareers() {
               />
             </div>
 
-            <div className="space-y-2">
-              <label className="text-sm font-bold text-gray-300">Duration</label>
-              <input 
-                type="text" 
-                value={formData.duration}
-                onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
-                placeholder="6 Months" 
-                className="w-full px-4 py-2.5 bg-[#131E32] border border-[#1F2937] rounded-xl text-sm focus:outline-none focus:border-amber-500 transition-colors text-white placeholder:text-gray-600" 
-              />
-            </div>
+            {formData.type === 'internship' && (
+              <div className="space-y-2">
+                <label className="text-sm font-bold text-gray-300">Duration</label>
+                <input 
+                  type="text" 
+                  value={formData.duration}
+                  onChange={(e) => setFormData({ ...formData, duration: e.target.value })}
+                  placeholder="6 Months" 
+                  className="w-full px-4 py-2.5 bg-[#131E32] border border-[#1F2937] rounded-xl text-sm focus:outline-none focus:border-amber-500 transition-colors text-white placeholder:text-gray-600" 
+                />
+              </div>
+            )}
 
             <div className="space-y-2">
               <label className="text-sm font-bold text-gray-300">About the Role</label>
@@ -409,9 +411,11 @@ export default function AdminCareers() {
                         <div className="flex items-center gap-1 text-gray-400 text-xs mb-1">
                           <MapPin size={12} className="text-gray-500" /> {job.location}
                         </div>
-                        <div className="flex items-center gap-1 text-gray-400 text-xs">
-                          <Clock size={12} className="text-gray-500" /> {job.duration}
-                        </div>
+                        {job.duration && (
+                          <div className="flex items-center gap-1 text-gray-400 text-xs">
+                            <Clock size={12} className="text-gray-500" /> {job.duration}
+                          </div>
+                        )}
                       </td>
                       <td className="py-4 px-6 text-right space-x-2 whitespace-nowrap">
                          <button onClick={() => handleEdit(job)} className="p-2 bg-[#131E32] hover:bg-amber-500/20 text-gray-400 hover:text-amber-400 rounded-lg border border-[#1F2937] hover:border-amber-500/50 transition-all cursor-pointer">

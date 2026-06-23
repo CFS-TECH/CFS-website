@@ -33,21 +33,42 @@ const ShowOurServices = () => {
   };
 
   return (
-    <div className="flex flex-col lg:flex-row items-start justify-between mt-8 lg:mt-16 gap-6 lg:gap-10 px-4 lg:px-0">
+    <div className="w-full flex flex-col lg:flex-row items-start justify-between mt-8 lg:mt-16 gap-6 lg:gap-10 px-4 lg:px-0">
+      
+      {/* Mobile Horizontal Scrollable Tab Bar */}
+      <div className="w-full lg:hidden flex overflow-x-auto gap-2 py-3 px-1 border-b border-gray-100 bg-white z-40 scrollbar-none" style={{ scrollbarWidth: "none" }} suppressHydrationWarning>
+        {servicesData.map((category, idx) => {
+          const isOpen = isActiveServices === category.mainServiceName.toLowerCase();
+          return (
+            <button
+              key={idx}
+              onClick={() => setIsActiveServices(category.mainServiceName.toLowerCase())}
+              className={`flex-shrink-0 px-4 py-2 rounded-full text-xs font-bold transition-all whitespace-nowrap ${
+                isOpen
+                  ? "bg-orange-500 text-white shadow-md"
+                  : "bg-gray-100 text-[#102a43] hover:bg-gray-200"
+              }`}
+            >
+              {category.mainServiceName}
+            </button>
+          );
+        })}
+      </div>
+
       {/* Left Column (Content) - Keep order-2 lg:order-1 */}
       <div className="w-full lg:w-2/3 order-2 lg:order-1">
         <section className="w-full lg:w-[90%] mx-auto mt-6">
           <AnimatePresence mode="wait">
             {activeCategory && (
               <motion.div
-                key={isActiveServices} // This triggers the animation on every click
+                key={isActiveServices}
                 variants={containerVariants}
                 initial="hidden"
                 animate="visible"
                 exit="exit"
               >
                 {/* Responsive Image Container */}
-                <div className="relative w-full aspect-video md:h-[300px] h-[250px] rounded-2xl overflow-hidden shadow-lg">
+                <div className="relative w-full aspect-video md:h-[300px] h-[220px] rounded-2xl overflow-hidden shadow-lg">
                   <motion.img
                     initial={{ scale: 1.1 }}
                     animate={{ scale: 1 }}
@@ -62,12 +83,12 @@ const ShowOurServices = () => {
                   {activeCategory.title}
                 </h2>
 
-                <p className="mt-4 text-base lg:text-lg text-gray-600 leading-relaxed">
+                <p className="mt-4 text-sm lg:text-lg text-gray-600 leading-relaxed">
                   {activeCategory.description}
                 </p>
 
                 {/* Service Cards Grid */}
-                <section className="mt-8 lg:mt-10 grid grid-cols-1 md:grid-cols-2 gap-4 lg:gap-10">
+                <section className="mt-8 lg:mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
                   {activeCategory?.ServicesName?.map((service, id) => (
                     <motion.div
                       key={id}
@@ -98,14 +119,23 @@ const ShowOurServices = () => {
                     </motion.div>
                   ))}
                 </section>
+
+                {/* Mobile Brochure Button at Bottom */}
+                <div className="w-full lg:hidden mt-8">
+                  <button className="text-base justify-center flex items-center gap-x-3 text-white bg-[#102a42] w-full p-4 rounded-xl transition-all hover:bg-orange-600 active:scale-95 shadow-md group">
+                    <FaFilePdf className="group-hover:scale-110 transition-transform" />
+                    Company Brochure
+                  </button>
+                </div>
+
               </motion.div>
             )}
           </AnimatePresence>
         </section>
       </div>
 
-      {/* Right Column (Sidebar/Accordion) - Keep order-1 lg:order-2 */}
-      <div className="w-full lg:w-1/3 lg:sticky lg:top-24 order-1 lg:order-2">
+      {/* Right Column (Sidebar/Accordion) - Desktop Only */}
+      <div className="hidden lg:flex w-full lg:w-1/3 lg:sticky lg:top-24 flex-col order-1 lg:order-2">
         <div className="bg-white p-4 flex flex-col gap-y-3 lg:gap-y-4 shadow-xl lg:shadow-lg rounded-2xl border border-gray-50">
           {servicesData.map((category, idx) => {
             const isOpen =
