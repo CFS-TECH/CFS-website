@@ -89,35 +89,54 @@ const ShowOurServices = () => {
 
                 {/* Service Cards Grid */}
                 <section className="mt-8 lg:mt-10 grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-10">
-                  {activeCategory?.ServicesName?.map((service, id) => (
-                    <motion.div
-                      key={id}
-                      variants={cardVariants}
-                      whileHover={{ y: -5 }}
-                      className={`p-6 border border-gray-100 rounded-xl shadow-sm hover:shadow-md transition-all flex flex-col gap-3 group `}
-                    >
-                      <div
-                        className={`w-fit p-3 rounded-lg transition-colors bg-orange-50 text-orange-500 group-hover:bg-orange-500 group-hover:text-white`}
+                  {activeCategory?.ServicesName?.map((service, id) => {
+                    const isITService = activeCategory.mainServiceName === "IT Services";
+                    return (
+                      <motion.div
+                        key={id}
+                        variants={cardVariants}
+                        whileHover={{ y: -5 }}
+                        className={`p-6 border rounded-xl transition-all flex flex-col gap-3 group relative ${
+                          isITService 
+                            ? "bg-gradient-to-br from-white via-white to-orange-500/[0.03] border-orange-500/30 shadow-[0_8px_30px_rgb(254,116,31,0.06)] hover:border-orange-500" 
+                            : "bg-white border-gray-100 shadow-sm hover:shadow-md"
+                        }`}
                       >
-                        {service.icon}
-                      </div>
+                        {isITService && (
+                          <span className="absolute top-4 right-4 bg-orange-500 text-white text-[9px] font-bold uppercase px-2.5 py-0.5 rounded-full tracking-wider shadow-sm select-none">
+                            Core Service
+                          </span>
+                        )}
 
-                      <h3 className={`font-bold text-lg lg:text-xl `}>
-                        {service.name}
-                      </h3>
+                        <div
+                          className={`w-fit p-3 rounded-lg transition-colors ${
+                            isITService 
+                              ? "bg-orange-500 text-white" 
+                              : "bg-orange-50 text-orange-500 group-hover:bg-orange-500 group-hover:text-white"
+                          }`}
+                        >
+                          {service.icon}
+                        </div>
 
-                      <p className={`text-sm leading-relaxed `}>
-                        {service.description}
-                      </p>
+                        <h3 className="font-bold text-lg lg:text-xl text-[#102a42]">
+                          {service.name}
+                        </h3>
 
-                      <Link
-                        href={service.link}
-                        className={`text-sm font-semibold hover:underline mt-2 inline-flex items-center `}
-                      >
-                        Learn More →
-                      </Link>
-                    </motion.div>
-                  ))}
+                        <p className="text-sm leading-relaxed text-gray-600">
+                          {service.description}
+                        </p>
+
+                        <Link
+                          href={service.link}
+                          className={`text-sm font-semibold hover:underline mt-2 inline-flex items-center ${
+                            isITService ? "text-orange-500 hover:text-orange-600" : "text-[#102a42]"
+                          }`}
+                        >
+                          Learn More →
+                        </Link>
+                      </motion.div>
+                    );
+                  })}
                 </section>
 
                 {/* Mobile Brochure Button at Bottom */}
