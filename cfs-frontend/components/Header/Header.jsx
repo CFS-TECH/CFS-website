@@ -182,12 +182,18 @@ const Header = () => {
           </Link>
         </menu>
 
-        <div className="flex items-center gap-4" suppressHydrationWarning={true}>
+        <div className="flex items-center gap-3 sm:gap-4" suppressHydrationWarning={true}>
           <Link
             href="/contact-us"
             className="hidden md:flex w-40 h-10 text-white font-semibold bg-[#FD741E] items-center justify-center gap-2 rounded-full hover:bg-[#e66316] transition-all shadow-md"
           >
             Get A Quote <FaLocationArrow />
+          </Link>
+          <Link
+            href="/contact-us"
+            className="md:hidden px-3.5 py-1.5 text-xs text-white font-bold bg-[#FD741E] flex items-center justify-center gap-1 rounded-full hover:bg-[#e66316] transition-all active:scale-95 shadow-sm"
+          >
+            Contact Now
           </Link>
           <button
             onClick={() => setIsMobileMenuOpen(true)}
